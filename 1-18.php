@@ -18,3 +18,20 @@
  */
 // ここから実装してください
 
+function makeCounter(int $start = 0, int $step = 1) : callable{
+    $ver = $start;
+
+    
+    $result = function () use (&$ver , $step): int {
+        $sum = $ver;
+        $ver += $step;
+        return $ver;
+    };    
+
+    return $result;
+}
+
+$c = makeCounter(10, 2);
+echo $c(), "\\n"; 
+echo $c(), "\\n"; 
+echo $c(), "\\n"; 

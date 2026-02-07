@@ -11,3 +11,8 @@
  */
 // ここから実装してください
 
+$user = ['name'=>'Taro','age'=>20,'email'=>'taro@example.com'];
+foreach ($user as $key => $value) {
+    echo $key . ": " . $value . PHP_EOL;
+}
+

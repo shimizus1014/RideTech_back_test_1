@@ -17,3 +17,15 @@
 
 // ここから表示処理を実装してください（テスト呼び出し）
 
+function filterAdults(array $users): string {
+    $result = [];
+    foreach ($users as $user) {
+        if ($user['age'] >= 20) {
+            $result[] = $user['name'];
+        }
+    }
+    return implode(",", $result);
+}
+echo filterAdults([['name'=>'Taro','age'=>19],
+                   ['name'=>'Mika','age'=>22],
+                   ['name'=>'Ken','age'=>20]]);

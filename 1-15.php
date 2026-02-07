@@ -22,3 +22,15 @@
  */
 // ここから実装してください
 
+function flatten2(array $matrix) : array{
+    $result = [];
+
+    foreach ($matrix as $row) {
+        foreach ($row as $value) {
+            $result[] = $value; // 末尾に追加
+        }
+    }
+    return $result;
+}
+
+print_r(flatten2([[1,2],[3],[4,5]]));

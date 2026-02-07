@@ -13,3 +13,8 @@
 
 // ここで関数を呼び出して表示してください
 
+function greeting($name = "Guest") {
+    return "Hello, $name!";
+}
+echo greeting("Mika") . PHP_EOL;
+echo greeting() . PHP_EOL;

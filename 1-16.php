@@ -21,3 +21,21 @@
  */
 // ここから実装してください
 
+function getIn(array $arr, string $path, $default=null) {
+    $keys = explode('.', $path);
+    $data = $arr; 
+
+    foreach ($keys as $key) {
+        if (!is_array($data) || !array_key_exists($key, $data)) {
+            return $default;
+        }
+        $data = $data[$key]; 
+    }
+
+    return $data;
+}
+
+$data = ['user'=>['profile'=>['name'=>'Mika']]];
+
+echo getIn($data, 'user.profile.name', 'NA'), "\n";  
+echo getIn($data, 'user.address.city', 'NA'), "\n";  

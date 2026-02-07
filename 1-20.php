@@ -19,3 +19,12 @@
  */
 // ここから実装してください
 
+function render(string $tpl, array $vars): string {
+    foreach ($vars as $key => $value) {
+        $tpl = str_replace("{{{$key}}}", (string)$value, $tpl);
+    }
+    return $tpl;
+}
+
+echo render("Hello, {{name}} ({{age}}).", ['name'=>'Mika','age'=>22]), "\\n";
+echo render("Hello, {{name}} ({{age}}).", ['name'=>'Ken']), "\\n";

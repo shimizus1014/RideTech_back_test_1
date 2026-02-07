@@ -15,3 +15,17 @@
 
 // ここから表示処理を実装してください（テスト呼び出し）
 
+function avgOf(array $xs): float {
+    $sum = 0;
+    foreach ($xs as $x) {
+        if (is_numeric($x)) {
+            $sum += (float)$x;
+            $countNumeric++;
+        }
+    }
+    if ($countNumeric === 0) {
+        return 0.0;
+    }
+    return $sum / count($xs);
+}
+echo avgOf([1, "2", "x", 3.0]);

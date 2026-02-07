@@ -28,3 +28,25 @@
  */
 // ここから実装してください
 
+function sortUsers(array $users): array {
+    usort($users, function($a, $b) {
+     
+        if ($a['score'] !== $b['score']) {
+            return $b['score'] <=> $a['score'];
+        }
+     
+        return $a['name'] <=> $b['name'];
+    });
+    return $users;
+}
+
+$users = [
+    ['name'=>'Ken','score'=>80],
+    ['name'=>'Ann','score'=>80],
+    ['name'=>'Bob','score'=>90],
+  ];
+  $sorted = sortUsers($users);
+  foreach ($sorted as $u) {
+    echo $u['name'] . '(' . $u['score'] . ')' . "\\n";
+  }
+

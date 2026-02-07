@@ -50,3 +50,19 @@
 
 // ここから実装してください
 
+function transpose(array $matrix): array {
+    $result = [];
+    $cols = count($matrix[0]);
+    foreach ($matrix as $row) {
+        if (count($row) !== $cols) return [];
+    }
+    for ($i = 0; $i < count($matrix); $i++) {
+        for ($j = 0; $j < count($matrix[0]); $j++) {
+            $result[$j][$i] = $matrix[$i][$j];
+        }
+    }
+    return $result;
+}
+
+$mat = [[1,2,3],[4,5,6]];
+print_r(transpose($mat));

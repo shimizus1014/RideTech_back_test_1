@@ -23,3 +23,17 @@
  */
 // ここから実装してください
 
+function countByDomain(array $emails): array {
+    $result = [];
+    foreach ($emails as $email) {
+        $parts = explode("@", $email);
+        if (count($parts) === 2) {  
+            $domain = $parts[1];
+            $result[$domain]++;
+        }
+    }
+    return $result;
+}
+
+$emails = ['a@x.com','b@y.com','c@x.com','bad','d@z.com','e@x.com'];
+print_r(countByDomain($emails));

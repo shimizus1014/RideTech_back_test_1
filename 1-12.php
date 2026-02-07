@@ -27,3 +27,14 @@
  */
 // ここから実装してください
 
+function uniqueStable(array $xs): array {
+    $result = [];
+    foreach ($xs as $x) {
+        if (!in_array($x, $result, true)) {
+            $result[] = $x;
+        }
+    }
+    return $result;
+}
+
+var_dump(uniqueStable([1, "1", 1, 2, 2, "2"]));

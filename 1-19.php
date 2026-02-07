@@ -17,3 +17,18 @@
  */
 // ここから実装してください
 
+//わからなくて調べたら便利関数みたいなのがあったので使いました
+function sumWithTax(array $prices, float $tax): int {
+    // 数値だけ抽出
+    $nums = array_filter($prices, 'is_numeric');
+
+    // 税込みにして四捨五入（配列の中身すべてに対して行う！！forいらず！）
+    $numsWithTax = array_map(function($x) use ($tax) {
+        return round($x * (1 + $tax));
+    }, $nums);
+
+    // キャスト
+    return (int) array_sum($numsWithTax);
+}
+
+echo sumWithTax([100, "200", "x", 50], 0.1);

@@ -15,3 +15,10 @@
  *  - php 1-3.php
  */
 // ここから実装してください
+
+$nums = [2, 3, 6, 4, 9];
+$nums[] = 8;
+unset($nums[1]);
+$nums = array_values($nums);
+echo count($nums);
+echo $nums[1];

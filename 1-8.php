@@ -12,3 +12,8 @@
  */
 // ここから実装してください
 
+$mat = [[1,2,3],[4,5,6],[7,8,9]];
+foreach ($mat as $index => $row) {
+    echo implode(" ", $row) . PHP_EOL;
+    echo "row" . $index . ": sum=" . array_sum($row) . PHP_EOL;
+}

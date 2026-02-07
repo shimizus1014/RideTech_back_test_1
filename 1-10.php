@@ -30,3 +30,21 @@
 
 // ここから表示処理を実装してください（テスト呼び出し）
 
+function topByTotal(array $orders, int $topN): string {
+    $result = [];
+
+    foreach ($orders as $order) {
+        if (is_numeric($order['total'])) {
+            $result[$order['user']] += (float)$order['total'];
+        }
+    }
+
+    arsort($result);
+
+    $topUsers = [];
+    foreach (array_slice($result, 0, $topN) as $user => $total) {
+        $topUsers[] = "{$user}: {$total}";
+    }
+
+    return implode(", ", $topUsers);
+}

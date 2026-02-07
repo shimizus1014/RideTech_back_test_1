@@ -24,3 +24,15 @@
  */
 // ここから実装してください
 
+function arrayWithout(array $src, array $remove): array {
+    foreach ($i = 0; $i < count($src); $i++) {
+        if ($src[$i] === $remove[0]) {
+            unset($src[$i]);
+        }
+    }
+    
+    return $result;
+}
+
+$result = array_values([10, "10", 20, 10, 30], [10]);
+print_r($result);

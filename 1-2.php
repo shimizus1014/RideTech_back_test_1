@@ -14,3 +14,22 @@
  */
 // ここから実装してください
 
+$a = "10";
+$b = "3.5";
+$c = "foo";
+echo gettype($a) 
+echo gettype($b) 
+echo gettype($c) 
+
+$sum = 0;
+
+if (is_numeric($a)) {
+    $sum += (float)$a;
+}
+if (is_numeric($b)) {
+    $sum += (float)$b;
+}
+if (is_numeric($c)) {
+    $sum += (float)$c;
+}
+echo $sum;

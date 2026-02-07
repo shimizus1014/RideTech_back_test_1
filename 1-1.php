@@ -15,3 +15,9 @@
  *  - php 1-1.php
  */
 // ここから実装してください
+
+$name = "Taro";
+echo "Hello, $name!\n";
+
+$age = 20;
+echo var_dump($age);
