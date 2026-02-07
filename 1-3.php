@@ -20,5 +20,12 @@ $nums = [2, 3, 6, 4, 9];
 $nums[] = 8;
 unset($nums[1]);
 $nums = array_values($nums);
-echo count($nums);
-echo $nums[1];
+
+foreach($nums as $num){
+    echo $num . " ";
+}
+
+echo "<br>";  // ブラウザ用改行
+
+echo count($nums) . "<br>"; 
+echo $nums[1] . "<br>";     

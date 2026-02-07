@@ -20,18 +20,21 @@
 
 function makeCounter(int $start = 0, int $step = 1) : callable{
     $ver = $start;
-
+    $count = 0;
     
-    $result = function () use (&$ver , $step): int {
-        $sum = $ver;
-        $ver += $step;
+    
+    $result = function () use (&$ver , $step ,&$count): int {
+        if($count > 0){
+            $ver += $step;
+        };    
+        $count++;
         return $ver;
-    };    
+    };
 
     return $result;
 }
 
 $c = makeCounter(10, 2);
-echo $c(), "\\n"; 
-echo $c(), "\\n"; 
-echo $c(), "\\n"; 
+echo $c(), "<br>"; 
+echo $c(), "<br>"; 
+echo $c(), "<br>"; 

@@ -25,10 +25,14 @@
 
 function countByDomain(array $emails): array {
     $result = [];
+
     foreach ($emails as $email) {
         $parts = explode("@", $email);
         if (count($parts) === 2) {  
-            $domain = $parts[1];
+            $domain = $parts[1];    
+            if (!isset($result[$domain])) {  // 初期化
+                $result[$domain] = 0;
+            }
             $result[$domain]++;
         }
     }

@@ -17,6 +17,7 @@
 
 function avgOf(array $xs): float {
     $sum = 0;
+    $countNumeric = 0;
     foreach ($xs as $x) {
         if (is_numeric($x)) {
             $sum += (float)$x;
@@ -26,6 +27,6 @@ function avgOf(array $xs): float {
     if ($countNumeric === 0) {
         return 0.0;
     }
-    return $sum / count($xs);
+    return $sum / $countNumeric;
 }
 echo avgOf([1, "2", "x", 3.0]);

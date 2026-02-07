@@ -34,9 +34,12 @@ function topByTotal(array $orders, int $topN): string {
     $result = [];
 
     foreach ($orders as $order) {
-        if (is_numeric($order['total'])) {
-            $result[$order['user']] += (float)$order['total'];
+        $user = $order['user'];
+        $total = (float)$order['total'];
+        if (!isset($result[$user])) {  // 初期化
+            $result[$user] = 0;
         }
+        $result[$user] += $total;
     }
 
     arsort($result);
@@ -48,3 +51,18 @@ function topByTotal(array $orders, int $topN): string {
 
     return implode(", ", $topUsers);
 }
+
+$orders = [
+    ['user'=>'Taro','total'=>100],
+    ['user'=>'Mika','total'=>'120'],
+    ['user'=>'Taro','total'=>50],
+    ['user'=>'Ken','total'=>'x'],
+    ['user'=>'Yuki','total'=>200],
+    ['user'=>'Mika','total'=>'30'],
+    ['user'=>'Ken','total'=>70],
+    ['user'=>'Taro','total'=>'20'],
+    ['user'=>'Yuki','total'=>'abc'],
+    ['user'=>'Hana','total'=>150]
+  ];
+
+  echo topByTotal($orders , 3);

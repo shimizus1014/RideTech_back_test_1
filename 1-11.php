@@ -25,14 +25,15 @@
 // ここから実装してください
 
 function arrayWithout(array $src, array $remove): array {
-    foreach ($i = 0; $i < count($src); $i++) {
+    for ($i = 0; $i < count($src); $i++) {
         if ($src[$i] === $remove[0]) {
             unset($src[$i]);
         }
     }
-    
-    return $result;
+    $src = array_values($src);
+    return $src;
 }
 
-$result = array_values([10, "10", 20, 10, 30], [10]);
+$result = arrayWithout([10, "10", 20, 10, 30], [10]);
+
 print_r($result);

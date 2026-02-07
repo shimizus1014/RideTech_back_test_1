@@ -47,6 +47,6 @@ $users = [
   ];
   $sorted = sortUsers($users);
   foreach ($sorted as $u) {
-    echo $u['name'] . '(' . $u['score'] . ')' . "\\n";
+    echo $u['name'] . '(' . $u['score'] . ')' . "<br>";
   }
 

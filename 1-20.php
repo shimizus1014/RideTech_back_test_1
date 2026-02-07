@@ -26,5 +26,5 @@ function render(string $tpl, array $vars): string {
     return $tpl;
 }
 
-echo render("Hello, {{name}} ({{age}}).", ['name'=>'Mika','age'=>22]), "\\n";
-echo render("Hello, {{name}} ({{age}}).", ['name'=>'Ken']), "\\n";
+echo render("Hello, {{name}} ({{age}}).", ['name'=>'Mika','age'=>22]), "<br>";
+echo render("Hello, {{name}} ({{age}}).", ['name'=>'Ken']), "<br>";

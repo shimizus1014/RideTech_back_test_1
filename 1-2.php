@@ -17,9 +17,9 @@
 $a = "10";
 $b = "3.5";
 $c = "foo";
-echo gettype($a) 
-echo gettype($b) 
-echo gettype($c) 
+echo gettype($a);
+echo gettype($b);
+echo gettype($c);
 
 $sum = 0;
 
